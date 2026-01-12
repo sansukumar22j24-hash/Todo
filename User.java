@@ -1,16 +1,20 @@
-package TaskManagementSystem;
+package Task;
 
 public class User {
-    private String userName;
-    private Task[] taskArray=new Task[10];
+    private  String userName;
+private Task[] task=new Task[10];
     public User(String userName){
-        this.userName=userName;
+        this.userName = userName;
+    }
+    public String getUserName(){
+        return userName;
     }
 
-    public String getUserName() {
-        return this.userName;
+    public Task[] getTask() {
+        return task;
     }
-    public Task[] getTaskArray(){
-        return this.taskArray;
+
+    public void setTask(Task[] task) {
+        this.task = task;
     }
 }

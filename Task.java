@@ -1,15 +1,17 @@
-package TaskManagementSystem;
+package Task;
 
 public class Task {
-    private String taskDescription;
-    public Task(String taskDescription){
-        this.taskDescription=taskDescription;
-    }
-    public String getTaskDescription(){
-       return  this.taskDescription;
+    private String description;
+    public Task (String description){
+
+        this.description = description;
     }
 
-    public void setTaskDescription(String taskDescription) {
-        this.taskDescription = taskDescription;
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
