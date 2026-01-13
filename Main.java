@@ -5,16 +5,50 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+        User[] users = new User[5];
         while (true) {
             System.out.println("Welcome to the task manager");
             System.out.println("Enter the user name:");
             String userName = sc.nextLine();
-            User currentUser=new User(userName);
-            System.out.print("welcome ");
-            System.out.println(currentUser.getUserName());
+
+            boolean findUser = false;
+            int userPositionArray = 0;
+
+            for (int i = 0; i < users.length; i++) {
+                if (users[i] == null) {
+                    continue;
+                }
+                if (users[i].getUserName().equals(userName)){
+                    findUser=true;
+                    userPositionArray=i;
+                    break;
+            }
+
+        }
+
+
+            User currentUser;
+            if (findUser == false) {
+                currentUser = new User(userName);
+
+                for (int i = 0; i < users.length; i++) {
+                    if (users[i] == null) {
+                        users[i] = currentUser;
+                        break;
+                    }
+
+                }
+            } else {
+                currentUser = users[userPositionArray];
+                System.out.println("User is already Exists");
+            }
+
+
+
             Integer choice = 0;//Autoboxing
             while(choice!=5){
+        System.out.print("welcome ");
+        System.out.println(currentUser.getUserName());
                 System.out.println("1.Add task");
                 System.out.println("2.List of Task");
                 System.out.println("3.Update");
@@ -50,7 +84,6 @@ public class Main {
                             String taskDescription = currentUser.getTask()[i].getDescription();
                             System.out.println("List of the available Tasks ");
                             System.out.println(taskDescription);
-
                             isTask=true;
                         }
                     }if(isTask==false){
@@ -64,7 +97,6 @@ public class Main {
                             System.out.print(i+1+" ");
                             System.out.println(currentUser.getTask()[i].getDescription());
                             update=true;
-                            break;
                         }
 
                     }
