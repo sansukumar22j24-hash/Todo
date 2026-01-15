@@ -2,6 +2,7 @@ package Task;
 
 public class Task {
     private String description;
+    private String status="Todo";
     public Task (String description){
 
         this.description = description;
@@ -13,5 +14,13 @@ public class Task {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
