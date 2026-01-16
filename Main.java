@@ -47,7 +47,8 @@ public class Main {
 
 
             Integer choice = 0;//Autoboxing
-            while(choice!=5){
+
+            while(choice!=9){
 
         System.out.print("welcome ");
         //4.after the user type his name in the terminal i stored in the reference variable inside the string object where it is datatype.Then now i displaying the user before i display the welcome in the terminal .
@@ -59,11 +60,15 @@ public class Main {
 
                 System.out.println("1.Add task");
                 //priting in the terminal to select the 1.option then i can able to store it some what as the integer and by using that integer address
-                System.out.println("2.List of Task");
+                System.out.println("2.List of Task To TODO||IN-PROGGRESS||DONE");
                 //printing text in the terminal to show user to select this option then i store the givan value some respective integer class
                 System.out.println("3.Update");//for this also
                 System.out.println("4.Delete");// fro this also
-                System.out.println("5.Exit");//for this also
+                System.out.println("5.List  the available Tasks-in TODO");
+                System.out.println("6.List  the available Tasks-in In-Progress");
+                System.out.println("7.List  the available Tasks-in Done");
+                System.out.println("8.List All the task");
+                System.out.println("9.Exit");//for this also
                 System.out.print("Enter your choice: ");//now i force the user t enter some integer in the terminal so i can store some where and take it from ther an compare the number with si=ome boolean
                 System.out.println();
                 choice = new Integer(sc.nextLine());
@@ -119,7 +124,7 @@ public class Main {
                                 System.out.println("Pick any number: ");
                                  options=new Integer(sc.nextLine());
                                 if(options.equals(1)) {
-                                    currentUser.getTask()[i].setStatus("Todo");
+                                    currentUser.getTask()[i].setStatus("TODO");
                                     System.out.print(i+1+" ");
                                     System.out.print(currentUser.getTask()[i].getDescription());
                                     System.out.print(" is in $");
@@ -157,10 +162,8 @@ public class Main {
                         System.out.println("no task is there ");
                     }
                     //
-                } else if (choice==6) {
-                    //show the available list
-
-                } else if (choice==3) {
+                }
+                else if (choice==3) {
                     //update
                     boolean update=false;
                     for(int i=0;i<currentUser.getTask().length;i++){
@@ -183,10 +186,8 @@ public class Main {
                     System.out.println(currentUser.getTask()[up-1].getDescription());
                     currentUser.getTask()[up-1].setStatus("In progress");
                     System.out.println(currentUser.getTask()[up-1].getStatus());
-
-
-
-                } else if (choice==4) {
+                }
+                else if (choice==4) {
                     for (int i = 0; i < currentUser.getTask().length; i++) {
                         if (currentUser.getTask()[i]!=null){
                             System.out.print(i+1+" ");
@@ -199,6 +200,49 @@ public class Main {
                     Integer delete=new Integer(sc.nextLine());
                     currentUser.getTask()[delete-1]=null;
 
+                }
+                else if (choice==5) {
+                    System.out.println("The Task TODO ");
+                    for (int i = 0; i < currentUser.getTask().length; i++) {
+                        if(currentUser.getTask()[i]!=null) {
+                            if (currentUser.getTask()[i].getStatus().equals("TODO")) {
+                                System.out.print(currentUser.getTask()[i].getDescription()+" : ");
+                                System.out.println(currentUser.getTask()[i].getStatus());                            }
+                        }
+                    }
+
+                }
+                else if (choice==6) {
+                    //show the available list
+                    System.out.println("The Task In-Progress ");
+                    for (int i = 0; i < currentUser.getTask().length; i++) {
+                        if(currentUser.getTask()[i]!=null) {
+                            if (currentUser.getTask()[i].getStatus().equals("In-Progress")) {
+                                System.out.print(currentUser.getTask()[i].getDescription()+" : ");
+                                System.out.println(currentUser.getTask()[i].getStatus());                            }
+                        }
+                    }
+
+                }
+                else if(choice==7){
+                    System.out.println("The Task DONE ");
+                    for (int i = 0; i < currentUser.getTask().length; i++) {
+                        if(currentUser.getTask()[i]!=null) {
+                            if (currentUser.getTask()[i].getStatus().equals("Done")) {
+                                System.out.print(currentUser.getTask()[i].getDescription()+" : ");
+                                System.out.println(currentUser.getTask()[i].getStatus());
+                            }
+                        }
+                    }
+                } else if (choice==8) {
+                    System.out.println("LIST OF AVAILABLE TASKS ");
+
+                    for (int i = 0; i < currentUser.getTask().length; i++) {
+                        if(currentUser.getTask()[i]!=null) {
+                                System.out.print(currentUser.getTask()[i].getDescription()+" : ");
+                                System.out.println(currentUser.getTask()[i].getStatus());
+                        }
+                    }
                 } else {
                     System.out.println("EXIT from Task ");
                 }
