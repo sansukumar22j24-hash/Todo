@@ -1,20 +1,27 @@
-package Task;
+package Task1;
 
 public class User {
-    private  String userName;
-private Task[] task=new Task[10];
-    public User(String userName){
-        this.userName = userName;
+    private  String name;
+
+Task[] tasks=new Task[5];
+    public User(String name){
+        this.name = name;
+
     }
-    public String getUserName(){
-        return userName;
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Task[] getTask() {
-        return task;
+    public Task[] getTasks() {
+        return tasks;
     }
 
-    public void setTask(Task[] task) {
-        this.task = task;
+    public void setTasks(Task[] tasks) {
+        this.tasks = tasks;
     }
+
+
 }
