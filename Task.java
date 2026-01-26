@@ -1,23 +1,28 @@
-package Task1;
+package Some.TODO;
 
 public class Task {
-    private String description;
-    private String status;
+    private  String description;
+    private String Status;
+
+    public  Task(){}
     public Task(String description){
         this.description=description;
-        this.status="Todo";
+        this.Status="ToDo";
     }
+
     public String getDescription() {
-        return this.description;
+        return description;
     }
-    public void setDescription(String description){
-        this.description=description;
+
+    public void setDescription(String description) {
+        this.description = description;
     }
+
     public String getStatus() {
-        return status;
+        return Status;
     }
 
     public void setStatus(String status) {
-      this.status = status;
+        Status = status;
     }
 }
