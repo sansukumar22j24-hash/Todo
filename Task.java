@@ -6,9 +6,9 @@ public class Task {
     private String title;
     public  Task(){}
     public Task(String title){
-        this.description=null;
+        this.description="Empty";
         this.title=title;
-        this.Status="ToDo";
+        this.Status="Todo";
     }
 
     public String getDescription() {
