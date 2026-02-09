@@ -4,11 +4,9 @@ public class Mains {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
-        UserManager userManager = new UserManager();
+        UserManagerInterface userManager = new UserManager();
         while (true) {
-            User currentUser = userManager.login();
-
-
+            UserInterface currentUser = userManager.login();
             Integer choice;
             choice = 0;
             while (choice != 5) {
@@ -31,34 +29,27 @@ public class Mains {
                         continue;
 
                     }
-
-                        try {
-                            choice = new Integer(choices);
+                    try {
+                        choice = new Integer(choices);
                             if (choice < 1 || choice > 5) {
                                 throw new Exception();
                             }
-
-                        } catch (Exception e) {
+                    } catch (Exception e) {
                             System.out.println("=== Enter the valid option first ===");
                             continue;
                         }
-
-
-                        TaskManager taskManager = new TaskManager();
-                        if (choice == 1) {
+                    TaskManagerInterface taskManager = new TaskManager();
+                        if (choice == 1) {//Add Task
                             taskManager.addTask(currentUser);
-                        } else if (choice == 2) {
+                        } else if (choice == 2) {//Show Task List
                             taskManager.showTask(currentUser);
-                        } else if (choice == 3) {
+                        } else if (choice == 3) {// Update Task
                             taskManager.updateTask(currentUser);
-                        } else if (choice == 4) {
+                        } else if (choice == 4) {// Delete Task
                             taskManager.deleteTask(currentUser);
                         } else if (choice == 5) {
                             throw new Exception();
                         }
-
-
-
                 } catch (Exception e) {
                     if (choice == 5 || choices.equals("exit")) {
                         System.out.println("Exit");
