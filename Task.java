@@ -1,14 +1,22 @@
-package Some.TODO;
+package TaskManager;
 
-public class Task implements TaskInterface{
-    private  String description;
-    private String Status;
+
+
+public class Task implements TaskInterface {
     private String title;
-    public  Task(){}
-    public Task(String title){
-        this.description="Empty";
-        this.title=title;
-        this.Status="Todo";
+    private String description;
+    private String status;
+public Task(String title){
+    this.title=title;
+    this.description="Empty";
+    this.status="Todo";
+}
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getDescription() {
@@ -20,18 +28,10 @@ public class Task implements TaskInterface{
     }
 
     public String getStatus() {
-        return Status;
+        return status;
     }
 
     public void setStatus(String status) {
-        Status = status;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
+        this.status = status;
     }
 }

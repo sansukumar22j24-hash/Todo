@@ -1,41 +1,39 @@
-package Some.TODO;
+package TaskManager;
 
 public abstract class TaskManagerUtils {
-
-
-    public static void displayTitle(User avilableUser){
-        for (int i = 0; i < avilableUser.getAvailableTask().length; i++) {
-            if ( avilableUser.getAvailableTask()[i]!=null){
-                System.out.print(i+1+" ");
-                System.out.println( avilableUser.getAvailableTask()[i].getTitle());
+    
+    public static boolean emptyTask(UserInterface currentUser){
+        for (int i = 0; i < currentUser.getTasks().length; i++) {
+            if(currentUser.getTasks()[i]!=null){
+              return   true;
+            }
+         
+            
+        }  return false;
+    }
+    
+    
+    public static  void displayTitle(UserInterface currentUser){
+        for (int i = 0; i < currentUser.getTasks().length; i++) {
+            if (currentUser.getTasks()[i]!=null){
+                System.out.print(1+i);
+                System.out.println(currentUser.getTasks()[i].getTitle());
             }
         }
-
+        
     }
-
-    public static  void displayStatus(User availableUser, String status){
-
+    public static void displayStatus(UserInterface currentUser,String  status){
         int n=1;
-        for (int i = 0; i < availableUser.getAvailableTask().length; i++) {
-            if(availableUser.getAvailableTask()[i].getStatus().equals(status)){
+        for (int i = 0; i < currentUser.getTasks().length; i++) {
+            if (currentUser.getTasks()[i].getStatus().equals(status))
+            {
                 System.out.print(n +" ");
-                System.out.println(availableUser.getAvailableTask()[i].getTitle());
-                System.out.println(availableUser.getAvailableTask()[i].getDescription());;
+                System.out.println(currentUser.getTasks()[i].getTitle());
+                System.out.println(currentUser.getTasks()[i].getDescription());;
+                System.out.println(currentUser.getTasks()[i].getStatus());
                 n++;
-                System.out.println(availableUser.getAvailableTask()[i].getStatus());
             }
         }
-
     }
-    public static boolean emptyTask(User availableUser){
-        for (int i = 0; i < availableUser.getAvailableTask().length; i++) {
-            if (availableUser.getAvailableTask()[i] != null) {
-                return true;
-            }
-        }
-        return false;
-
-    }
-
-
+    
 }

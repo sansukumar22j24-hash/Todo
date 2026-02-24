@@ -1,10 +1,14 @@
-package Some.TODO;
+package TaskManager;
 
 public interface UserInterface {
-    public  User(String name);
-    public String getName();
-    public void setName(String name);
-    public Task[] getAvailableTask();
-    public void setAvailableTask(Task[] availableTask);
+    public String getUserName();
+    public void setUserName(String userName);
+    public String getDob();
+    public void setDob(String dob);
+    public String getPassword();
+    public void setPassword(String password);
+    public TaskInterface[] getTasks();
+    public void setTasks(TaskInterface[] tasks);
+
 
 }

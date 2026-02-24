@@ -1,6 +1,5 @@
-package Some.TODO;
+package TaskManager;
 
 public interface UserManagerInterface {
-    public User login();
-
+    public User loginUser();
 }
